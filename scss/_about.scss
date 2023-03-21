@@ -1,0 +1,30 @@
+.about {
+  margin-top: 3rem;
+  &__container {
+    display: flex;
+  }
+
+  &__text {
+    h1 {
+      font-weight: 700;
+      writing-mode: tb-rl;
+      transform: rotate(-180deg);
+      letter-spacing: 0.04em;
+    }
+  }
+
+  &__image {
+    img {
+      max-width: 100%;
+      width: 284px;
+      height: 320.33px;
+    }
+  }
+
+  &__paragraph {
+    margin-top: 2.5rem;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 159.52%;
+  }
+}

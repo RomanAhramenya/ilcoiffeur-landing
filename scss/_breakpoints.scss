@@ -1,0 +1,37 @@
+$breakpoints: (
+  "for-phone-only": 375px,
+  "for-tablet-portrait-up": 768px,
+  "for-tablet-landscape-up": 1024px,
+  "for-desktop-up": 1200px,
+  "for-big-desktop-up": 1600px,
+);
+
+@mixin for-phone-only {
+  @media (max-width: map-get($breakpoints, "for-phone-only")) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: map-get($breakpoints, "for-tablet-portrait-up")) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: map-get($breakpoints, "for-tablet-landscape-up")) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: map-get($breakpoints, "for-desktop-up")) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}

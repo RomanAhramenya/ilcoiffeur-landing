@@ -1,0 +1,61 @@
+.footer {
+  margin-top: 6rem;
+  padding: 0 2.5rem;
+  background-color: $colorMain;
+  text-align: center;
+  color: $colorMainLighter;
+  font-family: "Assistant";
+  padding-bottom: 2rem;
+
+  &__header {
+    padding-top: 3rem;
+
+    p {
+      padding-top: 2rem;
+    }
+  }
+
+  &__menu {
+    margin-top: 2rem;
+
+    a {
+      display: block;
+      padding-top: 1rem;
+      line-height: 18px;
+      color: $colorMainLighter;
+    }
+  }
+
+  &__socials {
+    margin-top: 2rem;
+
+    &__icons {
+      margin-top: 1.5rem;
+      img {
+        height: 1.904375rem;
+        width: 1.904375rem;
+        padding: 0 0.3rem;
+      }
+    }
+  }
+
+  &__cta {
+  }
+
+  &__address {
+    margin-top: 2rem;
+
+    &__content {
+      margin-top: 1.5rem;
+      font-family: "Assistant";
+      line-height: 1.125rem;
+    }
+  }
+}
+
+.copyright {
+  background-color: $colorMainDark;
+  color: $colorMainLighter;
+  text-align: center;
+  font-family: Didot;
+}

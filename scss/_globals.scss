@@ -1,0 +1,198 @@
+body {
+  min-width: map-get($breakpoints, "for-phone-only");
+  font-family: $fontMain;
+  font-size: $fontMainSize;
+  color: $colorMainDark;
+  background-color: $colorMainLighter;
+
+  @include for-desktop-up {
+  }
+
+  &.noscroll {
+    overflow: hidden;
+  }
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+// Flexbox
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-family: $fontSecondary;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 31px;
+  text-transform: capitalize;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+h5 {
+  font-family: $fontSecondary;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 30px;
+}
+
+h6 {
+  font-family: $fontSecondary;
+  font-weight: 600;
+  line-height: 1.125rem;
+}
+
+p {
+  line-height: 17px;
+}
+
+// Buttons
+button,
+.button {
+  width: 167.4px;
+  height: 34.83px;
+  border-radius: 16px;
+  border: 0.5px solid $colorMainDark;
+  background-color: $colorMainLight;
+  cursor: pointer;
+}
+
+.next {
+  position: relative;
+  width: 180px;
+  height: 40px;
+  background-color: $colorMainDark;
+  color: $colorMainLighter;
+
+  &::after {
+    content: "1";
+    position: absolute;
+    width: 18px;
+    border-radius: 50px;
+    background-color: $colorMainLight;
+    color: $colorMainDark;
+    right: 14px;
+  }
+}
+
+// Visibility
+.hide-for-mobile {
+  @include for-phone-only() {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include for-tablet-portrait-up() {
+    display: none;
+  }
+}
+
+// Spacing
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+// Arrow
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  height: 1px;
+  background-color: $colorMainDark;
+}
+
+.arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  background: $colorMainDark;
+  height: 1px;
+  width: 4px;
+}
+
+.arrow::before {
+  right: -1px;
+  bottom: -1px;
+  transform: rotate(-35deg);
+}
+
+.arrow::after {
+  right: -1px;
+  top: -1px;
+  transform: rotate(35deg);
+}
+
+// Overlay
+.overlay {
+  position: fixed;
+  height: 100%;
+  z-index: 20;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+// Back
+.back {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  height: 1px;
+  background-color: $colorMainDark;
+}
+
+.back::before,
+.back::after {
+  content: "";
+  position: absolute;
+  background: $colorMainDark;
+  height: 1px;
+  width: 4px;
+}
+
+.back::before {
+  left: -1px;
+  bottom: -1px;
+  transform: rotate(35deg);
+}
+
+.back::after {
+  left: -1px;
+  top: -1px;
+  transform: rotate(-35deg);
+}

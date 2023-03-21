@@ -1,0 +1,143 @@
+.book {
+  height: 600px;
+  background-color: $colorMainLight;
+
+  &__header {
+    h2 {
+      display: inline-block;
+    }
+
+    button {
+      width: 51px;
+      border: none;
+    }
+  }
+
+  &__types {
+    button {
+      width: 126px;
+      height: 30px;
+      background-color: $colorMain;
+      color: $colorMainLight;
+      border-radius: 21px;
+    }
+  }
+
+  &__search {
+    input {
+      position: relative;
+      width: 318px;
+      height: 29px;
+      border: none;
+      border-radius: 40px;
+      background: rgba(141, 129, 147, 0.2);
+    }
+  }
+
+  &__services {
+  }
+
+  &__service {
+    button {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $colorMainDark;
+      color: $colorMainLighter;
+    }
+  }
+
+  &__calendar {
+    .month {
+      &-current {
+      }
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    }
+
+    .days {
+      ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .dates {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+
+      .date {
+        width: 24px;
+        height: 24px;
+        border: none;
+        background-color: $colorMainLight;
+        color: $colorMainDark;
+        border-radius: 50%;
+        &-prev {
+        }
+
+        &-today {
+          background-color: $colorMainDark;
+          color: $colorMainLighter;
+        }
+      }
+    }
+  }
+
+  &__slots {
+    .time {
+      width: 90px;
+      height: 24px;
+      background-color: $colorMainLighter;
+      color: $colorMainDark;
+      border: none;
+    }
+  }
+
+  &__form {
+    input {
+      background-color: $colorMain;
+      border: none;
+      border-radius: 20px;
+    }
+
+    p {
+      display: inline-block;
+    }
+
+    .form__text {
+      display: block;
+      width: 317px;
+      height: 32px;
+    }
+
+    .form__textarea {
+      display: block;
+      width: 317px;
+      height: 54px;
+    }
+
+    .form__checkbox {
+      width: 4.62px;
+      height: 4.62px;
+    }
+
+    ::placeholder {
+      color: $colorMainLighter;
+    }
+
+    .details {
+      &__content {
+        width: 317px;
+        height: 80px;
+        background-color: $colorMain;
+        border-radius: 20px;
+      }
+    }
+  }
+}
