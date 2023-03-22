@@ -30,6 +30,12 @@ $breakpoints: (
   }
 }
 
+@mixin for-big-desktop-up {
+  @media (min-width: map-get($breakpoints, "for-big-desktop-up")) {
+    @content;
+  }
+}
+
 @mixin breakpoint($bp: 0) {
   @media (min-width: $bp) {
     @content;
