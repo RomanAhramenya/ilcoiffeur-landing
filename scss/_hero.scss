@@ -9,7 +9,8 @@
   background-size: contain;
   background-repeat: no-repeat;
   text-align: center;
-  box-shadow: 8px 8px 8px 8px $colorMainLighter inset;
+  box-shadow: 0 0 90px 90px $colorMainLighter inset;
+  margin-bottom: 118px !important;
   &__text {
     display: flex;
     flex-direction: column;
@@ -26,6 +27,7 @@
   }
 
   &__paragraph {
+    line-height: 39px;
     width: 684px;
     font-size: 32px;
     margin-bottom: 4.63vw;
@@ -79,7 +81,9 @@
 
 @include for-tablet-portrait-up {
   .hero {
+    box-shadow: 0 0 8px 8px $colorMainLighter inset;
     background-size: 150%, 100%, cover;
+    margin-bottom: 24px !important;
     &__text {
       margin-bottom: 40px;
       span {
@@ -90,6 +94,7 @@
       }
     }
     &__paragraph {
+      line-height: 17px;
       font-size: 14px;
       width: 300px;
       margin-bottom: 80px;

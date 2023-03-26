@@ -40,7 +40,7 @@
         flex-direction: column;
         background: $colorMainLight;
         height: 0;
-        width: 0;
+        width: 100%;
         overflow: hidden;
         padding: 0;
         position: absolute;
@@ -60,17 +60,18 @@
         display: none;
       }
       input[type="checkbox"]:checked ~ .burger__menu {
-        height: 100%;
+        height: 100vh;
         width: 100%;
         overflow: visible;
         padding: 24px;
+        z-index: 50;
       }
       input[type="checkbox"]:checked ~ label .burger__line {
         top: -7px;
         transform: rotate(50deg);
       }
       input[type="checkbox"]:checked ~ label .burger__line::before {
-        transform: rotate(90deg);
+        transform: rotate(80deg);
         top: 0;
       }
       input[type="checkbox"]:checked ~ label .burger__line::after {
@@ -134,7 +135,7 @@
 }
 @include for-tablet-portrait-up {
   .header {
-    margin: 24px 24px 191px;
+    margin: 24px 0 191px;
   }
   .menu {
     justify-content: space-between;

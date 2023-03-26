@@ -31,7 +31,7 @@ a:hover {
 }
 @include for-tablet-portrait-up {
   ._container {
-    max-width: 100% !important;
+    max-width: calc(100% - 28px) !important;
   }
 }
 // Flexbox

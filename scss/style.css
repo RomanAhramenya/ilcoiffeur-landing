@@ -81,7 +81,7 @@ a:hover {
 
 @media (max-width: 768px) {
   ._container {
-    max-width: 100% !important;
+    max-width: calc(100% - 28px) !important;
   }
 }
 .flex {
@@ -142,7 +142,7 @@ a:hover {
   flex-direction: column;
   background: #f2e6f5;
   height: 0;
-  width: 0;
+  width: 100%;
   overflow: hidden;
   padding: 0;
   position: absolute;
@@ -162,17 +162,18 @@ a:hover {
   display: none;
 }
 .header__container .burger input[type=checkbox]:checked ~ .burger__menu {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   overflow: visible;
   padding: 24px;
+  z-index: 50;
 }
 .header__container .burger input[type=checkbox]:checked ~ label .burger__line {
   top: -7px;
   transform: rotate(50deg);
 }
 .header__container .burger input[type=checkbox]:checked ~ label .burger__line::before {
-  transform: rotate(90deg);
+  transform: rotate(80deg);
   top: 0;
 }
 .header__container .burger input[type=checkbox]:checked ~ label .burger__line::after {
@@ -232,7 +233,7 @@ a:hover {
 }
 @media (max-width: 768px) {
   .header {
-    margin: 24px 24px 191px;
+    margin: 24px 0 191px;
   }
   .menu {
     justify-content: space-between;
@@ -270,7 +271,8 @@ a:hover {
   background-size: contain;
   background-repeat: no-repeat;
   text-align: center;
-  box-shadow: 8px 8px 8px 8px #f6f0f8 inset;
+  box-shadow: 0 0 90px 90px #f6f0f8 inset;
+  margin-bottom: 118px !important;
 }
 .hero__text {
   display: flex;
@@ -287,6 +289,7 @@ a:hover {
   margin-bottom: 25px;
 }
 .hero__paragraph {
+  line-height: 39px;
   width: 684px;
   font-size: 32px;
   margin-bottom: 4.63vw;
@@ -336,7 +339,9 @@ a:hover {
 
 @media (max-width: 768px) {
   .hero {
+    box-shadow: 0 0 8px 8px #f6f0f8 inset;
     background-size: 150%, 100%, cover;
+    margin-bottom: 24px !important;
   }
   .hero__text {
     margin-bottom: 40px;
@@ -348,6 +353,7 @@ a:hover {
     margin-bottom: 8px;
   }
   .hero__paragraph {
+    line-height: 17px;
     font-size: 14px;
     width: 300px;
     margin-bottom: 80px;
@@ -366,5 +372,63 @@ a:hover {
     width: calc(100% + 100px);
     height: 10px;
     left: -50px;
+  }
+}
+.about {
+  display: flex;
+  align-items: end;
+}
+.about__container {
+  display: flex;
+}
+.about__text h1 {
+  font-size: 3.704vw;
+  font-weight: 700;
+  writing-mode: tb-rl;
+  transform: rotate(-180deg);
+  margin-right: 1.273vw;
+}
+.about__image {
+  width: calc(50% + 86px);
+}
+.about__image img {
+  width: 42.245vw;
+  height: 47.627vw;
+}
+.about__paragraph {
+  width: 50%;
+  font-size: 1.39vw;
+  line-height: 1.68vw;
+  font-weight: 300;
+  text-align: justify;
+}
+.about__paragraph p {
+  position: relative;
+  width: calc(100% + 3.472vw);
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+  }
+  .about__container {
+    width: 100%;
+    margin-bottom: 39px;
+  }
+  .about__container h1 {
+    font-size: 64px;
+  }
+  .about__container img {
+    width: 100%;
+    height: 100%;
+  }
+  .about__paragraph {
+    font-size: 14px;
+    width: 100%;
+    line-height: 22px;
+    order: 2;
+  }
+  .about__paragraph p {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
