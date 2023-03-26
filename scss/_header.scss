@@ -1,5 +1,6 @@
 .header {
-  margin-top: 30px;
+  margin-top: 3.7vw;
+  margin-bottom: 10vw;
   &__container {
     display: flex;
     justify-content: space-between;
@@ -9,8 +10,8 @@
       &__line {
         position: relative;
         display: block;
-        width: 20px;
-        height: 3px;
+        width: 30px;
+        height: 2px;
         background: $colorMainDark;
         transition: all 0.25s ease;
         &::before {
@@ -18,8 +19,8 @@
           position: absolute;
           top: -7px;
           display: block;
-          width: 20px;
-          height: 3px;
+          width: 30px;
+          height: 2px;
           background: $colorMainDark;
           transition: all 0.25s ease;
         }
@@ -29,8 +30,8 @@
           position: absolute;
           top: -14px;
           display: block;
-          width: 20px;
-          height: 3px;
+          width: 30px;
+          height: 2px;
           background: $colorMainDark;
         }
       }
@@ -132,6 +133,9 @@
   }
 }
 @include for-tablet-portrait-up {
+  .header {
+    margin-bottom: 191px;
+  }
   .menu {
     justify-content: space-between;
     align-items: baseline;
@@ -150,9 +154,6 @@
   }
 }
 @include for-desktop-up {
-  .header {
-    margin-top: 64px;
-  }
   .menu__item {
     margin-left: 4.5%;
   }

@@ -28,10 +28,14 @@ a:hover {
   position: relative;
   ._container {
     margin: 0 auto;
-    max-width: 86%;
+    max-width: 95%;
   }
 }
-
+@include for-tablet-portrait-up {
+  ._container {
+    max-width: calc(100% - 46px) !important;
+  }
+}
 // Flexbox
 .flex {
   display: flex;

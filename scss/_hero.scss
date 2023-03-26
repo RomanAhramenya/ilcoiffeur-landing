@@ -1,70 +1,113 @@
-// .hero {
-//   display: flex;
-//   position: relative;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   min-height: calc(100vh - $header-height);
-//   text-align: center;
+.hero {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url("./../images/hero-image.png");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+  box-shadow: 8px 8px 8px 8px $colorMainLighter inset;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.24vw;
+    span {
+      display: inline-block;
+      font-size: 64px;
+      font-weight: 600;
+      letter-spacing: 0.19em;
+    }
+    span:first-child {
+      margin-bottom: 25px;
+    }
+  }
 
-//   &__text {
-//     z-index: 1;
-//     padding: 0 3.5rem;
-//     font-weight: 600;
-//     font-size: 2rem;
-//     letter-spacing: 0.19em;
-//   }
+  &__paragraph {
+    width: 684px;
+    font-size: 32px;
+    margin-bottom: 4.63vw;
+  }
 
-//   &__paragraph {
-//     z-index: 1;
-//     padding: 0 3.5rem;
-//     margin-top: 3rem;
-//   }
+  &__button {
+    font-size: 24px;
+    padding: 19px 24px;
+    z-index: 1;
+    cursor: pointer;
+    color: $colorMainDark;
+    margin-bottom: 24vw;
+    transition: all 0.25s ease;
+    border: none;
+    outline: 2px black;
+    // border-top: 2px solid $colorMainDark;
+    // border-bottom: 2px solid $colorMainDark;
+    background: transparent;
+    position: relative;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: calc(100% + 192px);
+      height: 26px;
+      border-top: 1px solid $colorMainDark;
+      border-left: 1px solid $colorMainDark;
+      border-right: 1px solid $colorMainDark;
+      left: -96px;
+      top: 0px;
+      border-radius: 60px 60px 0 0;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: calc(100% + 192px);
+      height: 26px;
+      border-left: 1px solid $colorMainDark;
+      border-right: 1px solid $colorMainDark;
+      border-bottom: 1px solid $colorMainDark;
+      left: -96px;
+      bottom: 0px;
+      border-radius: 0 0 60px 60px;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
 
-//   &__button {
-//     z-index: 1;
-//     margin-top: 5rem;
-//   }
-
-//   &:before {
-//     content: "";
-//     position: absolute;
-//     width: 100%;
-//     height: 400px;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background-image: url("./../images/hero-image.png");
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     background-position-x: 50%;
-//     background-position-y: 100%;
-//   }
-
-//   &:after {
-//     content: "";
-//     display: block;
-//     height: 1.5rem;
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     bottom: -1px;
-//     background: linear-gradient(
-//       180deg,
-//       rgba(246, 240, 248, 0) 0%,
-//       #f6f0f8 55.21%
-//     );
-//   }
-
-//   /*     .gradient {
-//       position: absolute;
-//       width: 24.375rem;
-//       height: 1.5rem;
-//       bottom: 0;
-//       background: linear-gradient(
-//         180deg,
-//         rgba(246, 240, 248, 0) 0%,
-//         #f6f0f8 55.21%
-//       );
-//     } */
-// }
+@include for-tablet-portrait-up {
+  .hero {
+    background-size: 150%, 100%, cover;
+    &__text {
+      margin-bottom: 40px;
+      span {
+        font-size: 32px;
+      }
+      span:first-child {
+        margin-bottom: 8px;
+      }
+    }
+    &__paragraph {
+      font-size: 14px;
+      width: 300px;
+      margin-bottom: 80px;
+    }
+    &__button {
+      font-size: 12.5px;
+      padding: 10px;
+      margin-bottom: 250px;
+      &::before {
+        width: calc(100% + 100px);
+        height: 10px;
+        left: -50px;
+      }
+      &::after {
+        width: calc(100% + 100px);
+        height: 10px;
+        left: -50px;
+      }
+    }
+  }
+}
