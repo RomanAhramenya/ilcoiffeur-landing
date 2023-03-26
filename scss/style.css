@@ -62,7 +62,7 @@ body {
   box-sizing: border-box;
 }
 body.noscroll {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a,
@@ -74,7 +74,6 @@ a:hover {
 .wrapper {
   min-height: 100%;
   overflow: hidden;
-  position: relative;
 }
 .wrapper ._container {
   margin: 0 auto;

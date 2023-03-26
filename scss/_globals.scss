@@ -13,7 +13,7 @@ body {
   }
 
   &.noscroll {
-    overflow: hidden;
+    overflow-x: hidden;
   }
 }
 a,
@@ -25,7 +25,6 @@ a:hover {
 .wrapper {
   min-height: 100%;
   overflow: hidden;
-  position: relative;
   ._container {
     margin: 0 auto;
     max-width: 95%;
