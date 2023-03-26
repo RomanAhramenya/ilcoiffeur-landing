@@ -133,8 +133,7 @@
 }
 @include for-tablet-portrait-up {
   .header {
-    // margin: 24px 24px 191px;
-    margin: 0;
+    margin: 24px 24px 191px;
   }
   .menu {
     justify-content: space-between;
