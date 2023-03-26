@@ -1,6 +1,7 @@
 .header {
   margin-top: 3.7vw;
   margin-bottom: 10vw;
+  overflow: hidden;
   &__container {
     display: flex;
     justify-content: space-between;
@@ -160,7 +161,7 @@
     font-size: 20px;
   }
 }
-
+// ---------------------------------------------------------------------------------------------------------------------
 // Hamburger Open Styles
 //   &.open {
 //     .header__toggle {

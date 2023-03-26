@@ -55,7 +55,6 @@ table {
 }
 
 body {
-  min-width: 375px;
   font-family: "Inter", sans-serif;
   font-size: 14px;
   color: #54425f;
@@ -101,6 +100,7 @@ a:hover {
 .header {
   margin-top: 3.7vw;
   margin-bottom: 10vw;
+  overflow: hidden;
 }
 .header__container {
   display: flex;

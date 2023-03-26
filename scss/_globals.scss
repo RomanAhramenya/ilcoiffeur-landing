@@ -4,12 +4,10 @@
   box-sizing: border-box;
 }
 body {
-  min-width: map-get($breakpoints, "for-phone-only");
   font-family: $fontMain;
   font-size: $fontMainSize;
   color: $colorMainDark;
   background-color: $colorMainLighter;
-
   @include for-desktop-up {
   }
 
@@ -51,7 +49,7 @@ a:hover {
     align-items: center;
   }
 }
-
+// -------------------------------------------------------------------
 // h1 {
 //   font-size: 4rem;
 //   text-transform: uppercase;
