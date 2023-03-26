@@ -1,5 +1,6 @@
-html {
-  font-size: 14px;
+* {
+  padding: 0;
+  margin: 0;
 }
 body {
   min-width: map-get($breakpoints, "for-phone-only");
@@ -7,7 +8,7 @@ body {
   font-size: $fontMainSize;
   color: $colorMainDark;
   background-color: $colorMainLighter;
-
+  box-sizing: border-box;
   @include for-desktop-up {
   }
 
@@ -24,24 +25,10 @@ a:hover {
 .wrapper {
   min-height: 100%;
   overflow: hidden;
+  position: relative;
   ._container {
     margin: 0 auto;
     max-width: 86%;
-    // @include for-phone-only {
-    //   max-width: 315px;
-    // }
-    // @include for-tablet-portrait-up {
-    //   max-width: 655px;
-    // }
-    // @include for-tablet-landscape-up {
-    //   max-width: 881px;
-    // }
-    // @include for-desktop-up {
-    //   max-width: 1033px;
-    // }
-    // @include for-big-desktop-up {
-    //   max-width: 1489px;
-    // }
   }
 }
 

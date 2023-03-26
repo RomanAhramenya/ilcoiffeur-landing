@@ -48,8 +48,9 @@ table {
   border-spacing: 0;
 }
 
-html {
-  font-size: 14px;
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -58,6 +59,7 @@ body {
   font-size: 14px;
   color: #54425f;
   background-color: #f6f0f8;
+  box-sizing: border-box;
 }
 body.noscroll {
   overflow: hidden;
@@ -72,6 +74,7 @@ a:hover {
 .wrapper {
   min-height: 100%;
   overflow: hidden;
+  position: relative;
 }
 .wrapper ._container {
   margin: 0 auto;
@@ -91,16 +94,93 @@ a:hover {
   align-items: center;
 }
 
+.header {
+  margin-top: 30px;
+}
 .header__container {
   display: flex;
-  min-height: 12.4286rem;
-  align-items: center;
   justify-content: space-between;
+  align-items: baseline;
+}
+.header__container .burger {
+  display: none;
+}
+.header__container .burger__line {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #54425f;
+  transition: all 0.25s ease;
+}
+.header__container .burger__line::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #54425f;
+  transition: all 0.25s ease;
+}
+.header__container .burger__line::after {
+  content: "";
+  position: absolute;
+  top: -14px;
+  display: block;
+  width: 20px;
+  height: 3px;
+  background: #54425f;
+}
+.header__container .burger__menu {
+  display: flex;
+  flex-direction: column;
+  background: #f2e6f5;
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.25s ease;
+}
+.header__container .burger__link {
+  width: 50%;
+  color: #54425f;
+  line-height: 18px;
+  margin-bottom: 16px;
+}
+.header__container .burger input[type=checkbox] {
+  display: none;
+}
+.header__container .burger input[type=checkbox]:checked ~ .burger__menu {
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  padding: 24px;
+}
+.header__container .burger input[type=checkbox]:checked ~ label .burger__line {
+  top: -7px;
+  transform: rotate(50deg);
+}
+.header__container .burger input[type=checkbox]:checked ~ label .burger__line::before {
+  transform: rotate(90deg);
+  top: 0;
+}
+.header__container .burger input[type=checkbox]:checked ~ label .burger__line::after {
+  width: 0;
+}
+.header__container .burger label {
+  position: relative;
+  z-index: 200 !important;
 }
 
 .menu {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   width: 100%;
 }
 .menu a {
@@ -111,10 +191,8 @@ a:hover {
 }
 .menu__logo {
   font-family: "Didot";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2vw;
-  line-height: 3.3rem;
+  font-size: 36px;
+  display: flex;
 }
 .menu__list {
   width: 100%;
@@ -123,10 +201,10 @@ a:hover {
 }
 .menu__item {
   white-space: nowrap;
-  margin-left: 5%;
+  margin-left: 3%;
 }
 .menu__link {
-  font-size: 1.16vw;
+  font-size: 14px;
 }
 
 .header__lang {
@@ -145,4 +223,34 @@ a:hover {
   cursor: pointer;
   color: #8d8193;
   font-weight: 300;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .menu {
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .burger {
+    display: block !important;
+  }
+  .menu__list,
+  .lang {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .menu__link {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1200px) {
+  .header {
+    margin-top: 64px;
+  }
+  .menu__item {
+    margin-left: 4.5%;
+  }
+  .menu__link {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
