@@ -6,8 +6,26 @@
 body {
   font-family: $fontMain;
   font-size: $fontMainSize;
+  font-weight: 400;
   color: $colorMainDark;
   background-color: $colorMainLighter;
+  ::-webkit-scrollbar {
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $colorMainLight;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $colorMainDark;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $colorMain;
+  }
   @include for-desktop-up {
   }
 
@@ -31,24 +49,10 @@ a:hover {
 }
 @include for-tablet-portrait-up {
   ._container {
-    max-width: calc(100% - 28px) !important;
+    max-width: calc(100% - 48px) !important;
   }
 }
 // Flexbox
-.flex {
-  display: flex;
-
-  &-jc-sb {
-    justify-content: space-between;
-  }
-  &-jc-c {
-    justify-content: center;
-  }
-
-  &-ai-c {
-    align-items: center;
-  }
-}
 // -------------------------------------------------------------------
 // h1 {
 //   font-size: 4rem;

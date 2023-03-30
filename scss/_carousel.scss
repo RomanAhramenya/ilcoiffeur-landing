@@ -1,17 +1,16 @@
-// .carousel {
-//   width: 100%;
-//   overflow-x: scroll;
-//   -webkit-overflow-scrolling: touch; /* enable smooth scrolling on mobile */
-//   white-space: nowrap;
-
-//   &__wrapper {
-//     display: inline-block;
-
-//     img {
-//       width: 100%;
-//       height: auto;
-//       display: inline-block;
-//       vertical-align: top;
-//     }
-//   }
-// }
+.carousel {
+  width: 100%;
+  overflow-x: scroll;
+  user-select: none;
+  box-shadow: 0 0 10px black;
+  box-sizing: content-box;
+  &__wrapper {
+    display: flex;
+    transform: translateX(0);
+    img {
+      width: 100%;
+      height: auto;
+      pointer-events: none;
+    }
+  }
+}

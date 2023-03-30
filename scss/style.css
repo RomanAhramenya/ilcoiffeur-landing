@@ -57,8 +57,23 @@ table {
 body {
   font-family: "Inter", sans-serif;
   font-size: 14px;
+  font-weight: 400;
   color: #54425f;
   background-color: #f6f0f8;
+  /* Handle */
+  /* Handle on hover */
+}
+body ::-webkit-scrollbar {
+  height: 10px;
+}
+body ::-webkit-scrollbar-track {
+  background: #f2e6f5;
+}
+body ::-webkit-scrollbar-thumb {
+  background: #54425f;
+}
+body ::-webkit-scrollbar-thumb:hover {
+  background: #8d8193;
 }
 body.noscroll {
   overflow-x: hidden;
@@ -81,25 +96,31 @@ a:hover {
 
 @media (max-width: 768px) {
   ._container {
-    max-width: calc(100% - 28px) !important;
+    max-width: calc(100% - 48px) !important;
   }
 }
-.flex {
+.carousel {
+  width: 100%;
+  overflow-x: scroll;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  box-shadow: 0 0 10px black;
+  box-sizing: content-box;
+}
+.carousel__wrapper {
   display: flex;
+  transform: translateX(0);
 }
-.flex-jc-sb {
-  justify-content: space-between;
-}
-.flex-jc-c {
-  justify-content: center;
-}
-.flex-ai-c {
-  align-items: center;
+.carousel__wrapper img {
+  width: 100%;
+  height: auto;
+  pointer-events: none;
 }
 
 .header {
-  margin-top: 3.7vw;
-  margin-bottom: 10vw;
+  margin-top: 51px;
+  margin-bottom: 170px;
   overflow: hidden;
 }
 .header__container {
@@ -231,6 +252,7 @@ a:hover {
   font-weight: 300;
   font-size: 14px;
 }
+
 @media (max-width: 768px) {
   .header {
     margin: 24px 0 191px;
@@ -272,30 +294,30 @@ a:hover {
   background-repeat: no-repeat;
   text-align: center;
   box-shadow: 0 0 90px 90px #f6f0f8 inset;
-  margin-bottom: 118px !important;
+  margin-bottom: 240px !important;
 }
 .hero__text {
   display: flex;
   flex-direction: column;
-  margin-bottom: 3.24vw;
+  margin-bottom: 56px;
 }
 .hero__text span {
   display: inline-block;
   font-size: 64px;
+  line-height: 77px;
   font-weight: 600;
   letter-spacing: 0.19em;
 }
-.hero__text span:first-child {
-  margin-bottom: 25px;
-}
 .hero__paragraph {
+  font-weight: 300;
   line-height: 39px;
   width: 684px;
   font-size: 32px;
-  margin-bottom: 4.63vw;
+  margin-bottom: 80px;
 }
 .hero__button {
   font-size: 24px;
+  font-weight: 300;
   padding: 19px 24px;
   z-index: 1;
   cursor: pointer;
@@ -312,7 +334,7 @@ a:hover {
   display: block;
   position: absolute;
   width: calc(100% + 192px);
-  height: 26px;
+  height: 22px;
   border-top: 1px solid #54425f;
   border-left: 1px solid #54425f;
   border-right: 1px solid #54425f;
@@ -325,7 +347,7 @@ a:hover {
   display: block;
   position: absolute;
   width: calc(100% + 192px);
-  height: 26px;
+  height: 22px;
   border-left: 1px solid #54425f;
   border-right: 1px solid #54425f;
   border-bottom: 1px solid #54425f;
@@ -341,16 +363,14 @@ a:hover {
   .hero {
     box-shadow: 0 0 8px 8px #f6f0f8 inset;
     background-size: 150%, 100%, cover;
-    margin-bottom: 24px !important;
+    margin-bottom: 89px !important;
   }
   .hero__text {
     margin-bottom: 40px;
   }
   .hero__text span {
     font-size: 32px;
-  }
-  .hero__text span:first-child {
-    margin-bottom: 8px;
+    line-height: 38px;
   }
   .hero__paragraph {
     line-height: 17px;
@@ -377,6 +397,7 @@ a:hover {
 .about {
   display: flex;
   align-items: end;
+  margin-bottom: 235px !important;
 }
 .about__container {
   display: flex;
@@ -397,6 +418,7 @@ a:hover {
 }
 .about__paragraph {
   width: 50%;
+  font-weight: 300;
   font-size: 1.39vw;
   line-height: 1.68vw;
   font-weight: 300;
@@ -410,6 +432,7 @@ a:hover {
 @media (max-width: 768px) {
   .about {
     flex-direction: column;
+    margin-bottom: 84px !important;
   }
   .about__container {
     width: 100%;
@@ -417,6 +440,10 @@ a:hover {
   }
   .about__container h1 {
     font-size: 64px;
+    line-height: 76px;
+    letter-spacing: 0.04em;
+    margin: 0;
+    margin-left: -12px;
   }
   .about__container img {
     width: 100%;
@@ -430,5 +457,116 @@ a:hover {
   }
   .about__paragraph p {
     width: 100%;
+  }
+}
+.services .service__description h2 {
+  text-align: center;
+  margin-bottom: 80px;
+  font-weight: 600;
+  font-size: 36px;
+}
+.services .service__description p {
+  margin-bottom: 80px;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.services .service__cards_list {
+  display: flex;
+  gap: 41px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 262px;
+}
+.services .service__cards_list:last-child {
+  margin-bottom: 240px !important;
+}
+.services .service__card {
+  padding: 47px 56px 37px;
+  background: #f2e6f5;
+  max-width: 342px;
+  border-radius: 40px;
+}
+.services .service__card h3 {
+  font-family: "Assistant";
+  text-transform: capitalize;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+  white-space: nowrap;
+}
+.services .service__card img {
+  margin-bottom: 40px;
+}
+.services .service__card .arrow-container {
+  padding: 10px;
+  cursor: pointer;
+}
+.services .service__card .arrow {
+  margin: 0 auto;
+  width: 88px;
+  height: 1px;
+  background: #54425f;
+  position: relative;
+  left: 0;
+}
+.services .service__card .arrow::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 1px;
+  background: #54425f;
+  right: -1px;
+  top: -3px;
+  transform: rotate(45deg);
+}
+.services .service__card .arrow::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 1px;
+  background: #54425f;
+  right: -1px;
+  top: 3px;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .services .service__description h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .services .service__description p {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 56px;
+  }
+  .services .service__cards_list {
+    margin-bottom: 56px;
+  }
+  .services .service__cards_list:last-child {
+    margin-bottom: 80px !important;
+  }
+}
+.works {
+  margin-bottom: 262px !important;
+}
+.works h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 109px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .works {
+    margin-bottom: 80px !important;
+  }
+  .works h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
   }
 }/*# sourceMappingURL=style.css.map */

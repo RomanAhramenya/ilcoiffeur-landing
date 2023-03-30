@@ -1,13 +1,18 @@
-// .works {
-//   margin-top: 5rem;
-//   text-align: center;
-
-//   .carousel {
-//     margin-top: 1.5rem;
-
-//     img {
-//       width: 16.5rem;
-//       height: 21.875rem;
-//     }
-//   }
-// }
+.works {
+  margin-bottom: 262px !important;
+  h2 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 109px;
+    text-align: center;
+  }
+}
+@include for-tablet-portrait-up {
+  .works {
+    margin-bottom: 80px !important;
+    h2 {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+  }
+}

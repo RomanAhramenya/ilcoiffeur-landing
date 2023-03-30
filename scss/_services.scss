@@ -1,31 +1,105 @@
-// .service {
-//   margin-top: 5rem;
-//   text-align: center;
+.services {
+  .service {
+    &__description {
+      h2 {
+        text-align: center;
+        margin-bottom: 80px;
+        font-weight: 600;
+        font-size: 36px;
+      }
+      p {
+        margin-bottom: 80px;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+    }
+    &__cards_list {
+      display: flex;
+      gap: 41px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 262px;
+      &:last-child {
+        margin-bottom: 240px !important;
+      }
+    }
+    &__card {
+      padding: 47px 56px 37px;
+      background: $colorMainLight;
+      max-width: 342px;
+      border-radius: 40px;
+      h3 {
+        font-family: "Assistant";
+        text-transform: capitalize;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 40px;
+        white-space: nowrap;
+      }
+      img {
+        margin-bottom: 40px;
+      }
+      .arrow-container {
+        padding: 10px;
+        cursor: pointer;
+      }
+      .arrow {
+        margin: 0 auto;
 
-//   &__description {
-//     p {
-//       padding-top: 1.5rem;
-//     }
-//   }
+        width: 88px;
+        height: 1px;
+        background: $colorMainDark;
+        position: relative;
+        left: 0;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 8px;
+          height: 1px;
+          background: $colorMainDark;
+          right: -1px;
+          top: -3px;
+          transform: rotate(45deg);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 8px;
+          height: 1px;
+          background: $colorMainDark;
+          right: -1px;
+          top: 3px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}
 
-//   &__card {
-//     width: 21.375rem;
-//     height: 34rem;
-//     background: $colorMainLight;
-//     border-radius: 40px;
-//     margin: 2.5rem auto 0 auto;
-//     cursor: pointer;
-
-//     h3 {
-//       padding-top: 3.5rem;
-//     }
-
-//     img {
-//       padding-top: 2.5rem;
-//     }
-
-//     div {
-//       margin-top: 2.5rem;
-//     }
-//   }
-// }
+@include for-tablet-portrait-up {
+  .services {
+    .service {
+      &__description {
+        h2 {
+          font-size: 24px;
+          margin-bottom: 16px;
+        }
+        p {
+          font-size: 14px;
+          line-height: 17px;
+          margin-bottom: 56px;
+        }
+      }
+      &__cards_list {
+        margin-bottom: 56px;
+        &:last-child {
+          margin-bottom: 80px !important;
+        }
+      }
+    }
+  }
+}

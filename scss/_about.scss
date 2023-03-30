@@ -1,6 +1,7 @@
 .about {
   display: flex;
   align-items: end;
+  margin-bottom: 235px !important;
   &__container {
     display: flex;
   }
@@ -25,6 +26,7 @@
 
   &__paragraph {
     width: 50%;
+    font-weight: 300;
     font-size: 1.39vw;
     line-height: 1.68vw;
     font-weight: 300;
@@ -38,11 +40,16 @@
 @include for-tablet-portrait-up {
   .about {
     flex-direction: column;
+    margin-bottom: 84px !important;
     &__container {
       width: 100%;
       margin-bottom: 39px;
       h1 {
         font-size: 64px;
+        line-height: 76px;
+        letter-spacing: 0.04em;
+        margin: 0;
+        margin-left: -12px;
       }
       img {
         width: 100%;

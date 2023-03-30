@@ -10,31 +10,32 @@
   background-repeat: no-repeat;
   text-align: center;
   box-shadow: 0 0 90px 90px $colorMainLighter inset;
-  margin-bottom: 118px !important;
+  margin-bottom: 240px !important;
+
   &__text {
     display: flex;
     flex-direction: column;
-    margin-bottom: 3.24vw;
+    margin-bottom: 56px;
     span {
       display: inline-block;
       font-size: 64px;
+      line-height: 77px;
       font-weight: 600;
       letter-spacing: 0.19em;
-    }
-    span:first-child {
-      margin-bottom: 25px;
     }
   }
 
   &__paragraph {
+    font-weight: 300;
     line-height: 39px;
     width: 684px;
     font-size: 32px;
-    margin-bottom: 4.63vw;
+    margin-bottom: 80px;
   }
 
   &__button {
     font-size: 24px;
+    font-weight: 300;
     padding: 19px 24px;
     z-index: 1;
     cursor: pointer;
@@ -43,8 +44,6 @@
     transition: all 0.25s ease;
     border: none;
     outline: 2px black;
-    // border-top: 2px solid $colorMainDark;
-    // border-bottom: 2px solid $colorMainDark;
     background: transparent;
     position: relative;
     &::before {
@@ -52,7 +51,7 @@
       display: block;
       position: absolute;
       width: calc(100% + 192px);
-      height: 26px;
+      height: 22px;
       border-top: 1px solid $colorMainDark;
       border-left: 1px solid $colorMainDark;
       border-right: 1px solid $colorMainDark;
@@ -65,7 +64,7 @@
       display: block;
       position: absolute;
       width: calc(100% + 192px);
-      height: 26px;
+      height: 22px;
       border-left: 1px solid $colorMainDark;
       border-right: 1px solid $colorMainDark;
       border-bottom: 1px solid $colorMainDark;
@@ -83,14 +82,12 @@
   .hero {
     box-shadow: 0 0 8px 8px $colorMainLighter inset;
     background-size: 150%, 100%, cover;
-    margin-bottom: 24px !important;
+    margin-bottom: 89px !important;
     &__text {
       margin-bottom: 40px;
       span {
         font-size: 32px;
-      }
-      span:first-child {
-        margin-bottom: 8px;
+        line-height: 38px;
       }
     }
     &__paragraph {
