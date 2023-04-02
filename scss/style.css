@@ -573,6 +573,9 @@ a:hover {
     margin-bottom: 40px;
   }
 }
+.reviews {
+  margin-bottom: 240px !important;
+}
 .reviews__header h2 {
   font-size: 36px;
   margin-bottom: 80px;
@@ -610,6 +613,9 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  .reviews {
+    margin-bottom: 80px !important;
+  }
   .reviews__header h2 {
     font-size: 24px;
     margin-bottom: 56px;
@@ -627,5 +633,67 @@ a:hover {
   .review p {
     font-size: 14px;
     line-height: 17px;
+  }
+}
+.hours {
+  margin-bottom: 240px !important;
+}
+.hours h2 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 80px;
+}
+.hours__image {
+  display: none;
+}
+.hours__table {
+  background-image: url("./../images/coiffeur-hours.png");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-size: 18px;
+  font-family: "Assistant";
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.hours__table table {
+  background: #f6f0f8;
+}
+.hours__table table td {
+  padding: 14px;
+}
+.hours__table__pt-0 {
+  padding-top: 0 !important;
+}
+.hours__table__pb-0 {
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .hours {
+    margin-bottom: 80px !important;
+  }
+  .hours h2 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  .hours__table {
+    font-size: 14px;
+    background: transparent;
+    justify-content: center;
+  }
+  .hours__table table tr td:last-child {
+    padding-left: 26px;
+  }
+  .hours__image {
+    display: block;
+    margin-bottom: 24px;
+  }
+  .hours__image img {
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
