@@ -13,26 +13,32 @@ document.addEventListener("DOMContentLoaded", async () => {
   const carousel = document.querySelector(".carousel");
   const carouselWrapper = document.querySelector(".carousel__wrapper");
   const carouselImages = carouselWrapper.querySelectorAll("img");
-  let counterSlider = 0;
-  let isSideSLiderScroll = "left";
+  let counterSlider = 0; // колличество пикселей для смещения по X
+  let isSideSLiderScroll = "left"; // в какую сторону крутим слайдер
+
   let sliderAutoScroll = setInterval(() => {
     if (isSideSLiderScroll === "left") counterSlider++;
     if (isSideSLiderScroll === "right") counterSlider--;
-    carousel.scrollTo(counterSlider, 0);
+    carousel.scrollTo(counterSlider, 0); // автосмещение скролла
+
     if (
-      carouselImages[0].clientWidth * carouselImages.length -
+      carouselImages[0].clientWidth * carouselImages.length + // ширина одной картики * на количество
+        33 * (carouselImages.length - 1) - // растояние px между картинками умноженное на количество минус один
         carouselWrapper.clientWidth <=
       counterSlider
     ) {
       isSideSLiderScroll = "right";
     }
+
     if (counterSlider === 0) {
       isSideSLiderScroll = "left";
     }
-  }, 10);
+  }, 1);
+
   carousel.addEventListener("scroll", (e) => {
-    console.log(carousel.scrollLeft, counterSlider);
+    console.log(Math.ceil(carousel.scrollLeft), counterSlider);
     if (Math.ceil(carousel.scrollLeft) !== counterSlider) {
+      // this magic
       clearInterval(sliderAutoScroll);
     }
   });

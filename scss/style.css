@@ -95,6 +95,9 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  body ::-webkit-scrollbar {
+    height: 1px;
+  }
   ._container {
     max-width: calc(100% - 48px) !important;
   }
@@ -105,12 +108,11 @@ a:hover {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  box-shadow: 0 0 10px black;
-  box-sizing: content-box;
 }
 .carousel__wrapper {
   display: flex;
   transform: translateX(0);
+  gap: 33px;
 }
 .carousel__wrapper img {
   width: 100%;
@@ -499,6 +501,7 @@ a:hover {
   white-space: nowrap;
 }
 .services .service__card img {
+  width: 100%;
   margin-bottom: 40px;
 }
 .services .service__card .arrow-container {
@@ -568,5 +571,61 @@ a:hover {
   .works h2 {
     font-size: 24px;
     margin-bottom: 40px;
+  }
+}
+.reviews__header h2 {
+  font-size: 36px;
+  margin-bottom: 80px;
+  text-align: center;
+  font-weight: 600;
+}
+.reviews__wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 40px;
+}
+
+.review {
+  margin-bottom: 24px;
+}
+.review h4 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 8px;
+}
+.review__time {
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 29px;
+  color: #8d8193;
+  margin-bottom: 16px;
+}
+.review p {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: justify;
+}
+
+@media (max-width: 768px) {
+  .reviews__header h2 {
+    font-size: 24px;
+    margin-bottom: 56px;
+  }
+  .reviews__left_side {
+    display: none;
+  }
+  .review h4 {
+    font-size: 14px;
+  }
+  .review__time {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .review p {
+    font-size: 14px;
+    line-height: 17px;
   }
 }/*# sourceMappingURL=style.css.map */

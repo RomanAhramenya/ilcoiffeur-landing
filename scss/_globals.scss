@@ -48,6 +48,11 @@ a:hover {
   }
 }
 @include for-tablet-portrait-up {
+  body {
+    ::-webkit-scrollbar {
+      height: 1px;
+    }
+  }
   ._container {
     max-width: calc(100% - 48px) !important;
   }

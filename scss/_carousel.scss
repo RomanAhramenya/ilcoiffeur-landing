@@ -2,11 +2,10 @@
   width: 100%;
   overflow-x: scroll;
   user-select: none;
-  box-shadow: 0 0 10px black;
-  box-sizing: content-box;
   &__wrapper {
     display: flex;
     transform: translateX(0);
+    gap: 33px;
     img {
       width: 100%;
       height: auto;
