@@ -1,5 +1,5 @@
 // import { generateCalendar } from "./calendar.js";
-
+import { langArr } from "./lang.js";
 document.addEventListener("DOMContentLoaded", async () => {
   const body = document.querySelector("body");
 
@@ -41,6 +41,57 @@ document.addEventListener("DOMContentLoaded", async () => {
       clearInterval(sliderAutoScroll);
     }
   });
+
+  // Мультиязычность сайта
+
+  const select = document.querySelector(".lang__select");
+  const allLang = ["eng", "ru"]; // языки на сайте
+
+  select.addEventListener("change", changeLanguage); // изменять при выборе языка
+
+  let storagelang = localStorage.getItem("lang"); // получаем localstorage
+
+  if (storagelang && storagelang !== "eng") {
+    select.value = storagelang;
+    changeLanguage();
+  } // если сторадж не пустой и не английский язык то запускаем изменение языка
+
+  function changeLanguage() {
+    const value = select.value; //
+    localStorage.setItem("lang", value); // сохраняем в сторадж
+
+    for (let key in langArr) {
+      // бежим по ключам в файле с переводом
+      // ---------------------------------------------------menu
+      // if (key === "menu") {
+      //   const menuHtml = document.querySelectorAll(".lang-menu");
+      //   for (let index = 0; index < menuHtml.length; index++) {
+      //     if (!langArr[key][value][index]) {
+      //       // защита от изменения html при старом файле перевода
+      //       return;
+      //     }
+      //     menuHtml[index].innerHTML = langArr[key][value][index];
+      //   }
+      // }
+      //////////////////////////////////////////all
+
+      for (let className in langArr[key]) {
+        const isValid = document.querySelector(`.lang-${key}-${className}`);
+
+        if (key === "menu" && isValid) {
+          [...document.querySelectorAll(`.lang-${key}-${className}`)].map(
+            (element) => {
+              element.innerHTML = langArr[key][className][value];
+            }
+          );
+        }
+        if (isValid) {
+          document.querySelector(`.lang-${key}-${className}`).innerHTML =
+            langArr[key][className][value];
+        }
+      }
+    }
+  }
   // dateElements.addEventListener("click", () => {
   //   const activeDateButton = dateElements.querySelector(".date-active");
   //   if (activeDateButton) {

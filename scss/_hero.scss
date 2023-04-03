@@ -16,13 +16,10 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 56px;
-    span {
-      display: inline-block;
-      font-size: 64px;
-      line-height: 77px;
-      font-weight: 600;
-      letter-spacing: 0.19em;
-    }
+    font-size: 64px;
+    line-height: 77px;
+    font-weight: 600;
+    letter-spacing: 0.19em;
   }
 
   &__paragraph {
@@ -85,10 +82,8 @@
     margin-bottom: 89px !important;
     &__text {
       margin-bottom: 40px;
-      span {
-        font-size: 32px;
-        line-height: 38px;
-      }
+      font-size: 32px;
+      line-height: 38px;
     }
     &__paragraph {
       line-height: 17px;
