@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }, 1);
 
   carousel.addEventListener("scroll", (e) => {
-    console.log(Math.ceil(carousel.scrollLeft), counterSlider);
     if (Math.ceil(carousel.scrollLeft) !== counterSlider) {
       // this magic
       clearInterval(sliderAutoScroll);
