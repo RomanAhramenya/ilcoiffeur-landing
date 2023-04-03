@@ -54,12 +54,17 @@ table {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #54425f;
   background-color: #f6f0f8;
+  scroll-behavior: smooth;
   /* Handle */
   /* Handle on hover */
 }
