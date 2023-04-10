@@ -1,7 +1,6 @@
 .header {
-  margin-top: 51px;
-  margin-bottom: 170px;
   overflow: hidden;
+  @include adaptiv-value("padding", 24, 51);
   &__container {
     display: flex;
     justify-content: space-between;
@@ -51,7 +50,6 @@
         transition: all 0.25s ease;
       }
       &__link {
-        width: 50%;
         color: $colorMainDark;
         line-height: 18px;
         margin-bottom: 16px;
@@ -96,7 +94,7 @@
   }
   &__logo {
     font-family: "Didot";
-    font-size: 36px;
+    @include adaptiv-value("font-size", 32, 36);
     display: flex;
   }
   &__list {
@@ -109,7 +107,7 @@
     margin-left: 3%;
   }
   &__link {
-    font-size: 14px;
+    @include adaptiv-value("font-size", 14, 20);
   }
 }
 .header__lang {
@@ -133,7 +131,7 @@
 }
 @include for-tablet-portrait-up {
   .header {
-    margin: 24px 0 191px;
+    margin-bottom: 140px;
   }
   .menu {
     justify-content: space-between;
@@ -141,22 +139,12 @@
   }
   .burger {
     display: block !important;
+    &__link {
+      font-size: 14px;
+    }
   }
   .menu__list,
   .lang {
     display: none;
-  }
-}
-@include for-tablet-landscape-up {
-  .menu__link {
-    font-size: 16px;
-  }
-}
-@include for-desktop-up {
-  .menu__item {
-    margin-left: 4.5%;
-  }
-  .menu__link {
-    font-size: 20px;
   }
 }

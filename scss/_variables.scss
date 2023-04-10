@@ -8,9 +8,32 @@ $colorGrey: #d5d5d5;
 // Fonts
 $fontMain: "Inter", sans-serif;
 $fontSecondary: "Assistant";
-$fontMainColor: black;
-$fontMainSize: 14px; // 14px;
-$fontHeaderSize: 32px; // 32px
+$fontMainColor: $colorMainDark;
+$fontMainSize: 24px;
 
-// Sizes
-$header-height: 90px;
+@mixin adaptiv-value($property, $minSize, $maxSize) {
+  @if $property == "padding" {
+    #{$property}: calc(
+        #{$minSize +
+          px} +
+          (#{$maxSize} - #{$minSize}) *
+          ((100vw - 390px) / (1728 - 390))
+      )
+      0;
+  } @else {
+    #{$property}: calc(
+      #{$minSize +
+        px} +
+        (#{$maxSize} - #{$minSize}) *
+        ((100vw - 390px) / (1728 - 390))
+    );
+  }
+}
+
+@mixin flex($justify: center, $align: center, $wrap: wrap, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+  gap: $gap;
+}

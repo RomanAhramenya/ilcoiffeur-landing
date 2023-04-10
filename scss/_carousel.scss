@@ -3,12 +3,12 @@
   overflow-x: scroll;
   user-select: none;
   &__wrapper {
-    display: flex;
+    @include flex($wrap: nowrap);
     transform: translateX(0);
-    gap: 33px;
+    gap: 10px;
     img {
-      width: 100%;
-      height: auto;
+      @include adaptiv-value("width", 265.53, 380);
+      @include adaptiv-value("height", 349.38, 500);
       pointer-events: none;
     }
   }

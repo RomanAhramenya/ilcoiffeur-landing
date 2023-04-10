@@ -1,70 +1,61 @@
 .about {
-  display: flex;
-  align-items: end;
-  margin-bottom: 235px !important;
-  &__container {
-    display: flex;
-  }
-
-  &__text {
-    h1 {
-      font-size: 3.704vw;
-      font-weight: 700;
-      writing-mode: tb-rl;
-      transform: rotate(-180deg);
-      margin-right: 1.273vw;
-    }
-  }
-
-  &__image {
-    width: calc(50% + 86px);
-    img {
-      width: 42.245vw;
-      height: 47.627vw;
-    }
-  }
-
+  @include adaptiv-value("padding", 40, 120);
+  display: grid;
+  grid-template-areas:
+    "title image"
+    "paragraph image";
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   &__paragraph {
-    width: 50%;
-    font-weight: 300;
-    font-size: 1.39vw;
-    line-height: 1.68vw;
+    grid-area: paragraph;
+    @include adaptiv-value("font-size", 14, 24);
+    @include adaptiv-value("line-height", 22, 29);
     font-weight: 300;
     text-align: justify;
-    p {
-      position: relative;
-      width: calc(100% + 3.472vw);
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
+  &__title {
+    grid-area: title;
+    font-weight: 700;
+    font-size: 64px;
+    writing-mode: tb-rl;
+    transform: rotate(-180deg);
+    display: flex;
+    align-items: end;
+
+    h1 {
+      text-align: right;
+      line-height: 46px;
+      text-transform: uppercase;
+    }
+  }
+  &__image {
+    grid-area: image;
+    display: flex;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0 0;
     }
   }
 }
 @include for-tablet-portrait-up {
   .about {
-    flex-direction: column;
-    margin-bottom: 84px !important;
-    &__container {
-      width: 100%;
-      margin-bottom: 39px;
-      h1 {
-        font-size: 64px;
-        line-height: 76px;
-        letter-spacing: 0.04em;
-        margin: 0;
-        margin-left: -12px;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    &__paragraph {
-      font-weight: 300;
-      font-size: 14px;
-      width: 100%;
-      line-height: 17px;
-      order: 2;
-      p {
-        width: 100%;
-      }
+    grid-template-areas:
+      "title image"
+      "paragraph paragraph";
+    grid-template-columns: 1fr 12fr;
+    row-gap: 40px;
+    column-gap: 8px;
+    &__title {
+      align-items: start;
     }
   }
 }

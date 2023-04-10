@@ -1,12 +1,11 @@
 .hours {
-  margin-bottom: 240px !important;
-  h2 {
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 44px;
+  @include adaptiv-value("padding", 40, 120);
+  h1 {
+    @include adaptiv-value("font-size", 24, 36);
+    @include adaptiv-value("margin-bottom", 56, 80);
     text-align: center;
+    font-weight: 600;
     text-transform: uppercase;
-    margin-bottom: 80px;
   }
   &__image {
     display: none;
@@ -18,11 +17,11 @@
     background-repeat: no-repeat;
     font-size: 18px;
     font-family: "Assistant";
-    display: flex;
-    justify-content: end;
-    align-items: center;
+    @include flex($justify: flex-end);
     table {
+      border: 2px solid $colorMainLighter;
       td {
+        line-height: 10px;
         padding: 14px;
       }
       background: $colorMainLighter;

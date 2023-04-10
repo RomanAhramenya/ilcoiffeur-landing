@@ -1,106 +1,88 @@
 .services {
+  @include adaptiv-value("padding", 40, 120);
   .service {
     &__description {
-      h2 {
-        text-align: center;
-        margin-bottom: 80px;
+      text-align: center;
+      h1 {
         font-weight: 600;
-        font-size: 36px;
+        @include adaptiv-value("font-size", 24, 36);
+        text-transform: uppercase;
       }
       p {
-        margin-bottom: 80px;
+        &::first-letter {
+          text-transform: capitalize;
+        }
         font-weight: 300;
-        font-size: 24px;
-        line-height: 29px;
-        display: flex;
-        align-items: center;
-        text-align: center;
+        @include adaptiv-value("font-size", 14, 24);
+        @include adaptiv-value("line-height", 22, 29);
+        @include adaptiv-value("padding-bottom", 56, 80);
+        @include adaptiv-value("padding-top", 16, 80);
       }
     }
-    &__cards_list {
-      display: flex;
-      gap: 41px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 262px;
-      &:last-child {
-        margin-bottom: 240px !important;
-      }
-    }
-    &__card {
-      padding: 47px 56px 37px;
-      background: $colorMainLight;
-      max-width: 342px;
-      border-radius: 40px;
-      h3 {
-        font-family: "Assistant";
-        text-transform: capitalize;
-        font-size: 24px;
+    &__card_list {
+      @include flex($gap: 20px);
+      @include adaptiv-value("margin-bottom", 80, 240);
+      &__item {
         text-align: center;
-        margin-bottom: 40px;
-        white-space: nowrap;
-      }
-      img {
-        width: 100%;
-        margin-bottom: 40px;
-      }
-      .arrow-container {
-        padding: 10px;
-        cursor: pointer;
-      }
-      .arrow {
-        margin: 0 auto;
-
-        width: 88px;
-        height: 1px;
-        background: $colorMainDark;
-        position: relative;
-        left: 0;
-        &::before {
-          content: "";
-          position: absolute;
-          width: 8px;
-          height: 1px;
-          background: $colorMainDark;
-          right: -1px;
-          top: -3px;
-          transform: rotate(45deg);
+        padding: 56px 47px;
+        background: $colorMainLight;
+        border-radius: 40px;
+        h3 {
+          font-family: "Assistant";
+          font-size: 24px;
+          margin-bottom: 40px;
+          &::first-letter {
+            text-transform: capitalize;
+          }
         }
-        &::after {
-          content: "";
-          position: absolute;
-          width: 8px;
-          height: 1px;
-          background: $colorMainDark;
-          right: -1px;
-          top: 3px;
-          transform: rotate(-45deg);
+        &__image {
+          width: 248px;
+          height: 320px;
+          position: relative;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
+      }
+      &__wrap {
+        @include flex($gap: 20px);
       }
     }
   }
 }
 
-@include for-tablet-portrait-up {
-  .services {
-    .service {
-      &__description {
-        h2 {
-          font-size: 24px;
-          margin-bottom: 16px;
-        }
-        p {
-          font-size: 14px;
-          line-height: 17px;
-          margin-bottom: 56px;
-        }
-      }
-      &__cards_list {
-        margin-bottom: 56px;
-        &:last-child {
-          margin-bottom: 80px !important;
-        }
-      }
-    }
+@mixin arrow($top, $rotate) {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 1px;
+  background: $colorMainDark;
+  right: -1px;
+  top: $top;
+  transform: rotate($rotate);
+}
+
+.arrow-container {
+  cursor: pointer;
+  margin: 30px auto 0;
+  padding: 10px;
+}
+.arrow {
+  margin: 0 auto;
+  width: 88px;
+  height: 1px;
+  background: $colorMainDark;
+  position: relative;
+  left: 0;
+  &::before {
+    @include arrow(-3px, 45deg);
+  }
+  &::after {
+    @include arrow(3px, -45deg);
   }
 }

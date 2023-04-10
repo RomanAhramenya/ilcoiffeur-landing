@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (
       carouselImages[0].clientWidth * carouselImages.length + // ширина одной картики * на количество
-        33 * (carouselImages.length - 1) - // растояние px между картинками умноженное на количество минус один
+        10 * (carouselImages.length - 1) - // растояние px между картинками умноженное на количество минус один
         carouselWrapper.clientWidth <=
       counterSlider
     ) {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (counterSlider === 0) {
       isSideSLiderScroll = "left";
     }
-  }, 1);
+  }, 10);
 
   carousel.addEventListener("scroll", (e) => {
     if (Math.ceil(carousel.scrollLeft) !== counterSlider) {
@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   // Мультиязычность сайта
 
   const select = document.querySelector(".lang__select");
-  const allLang = ["eng", "ru"]; // языки на сайте
 
   select.addEventListener("change", changeLanguage); // изменять при выборе языка
 
@@ -57,23 +56,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   } // если сторадж не пустой и не английский язык то запускаем изменение языка
 
   function changeLanguage() {
-    const value = select.value; //
+    const value = select.value;
     localStorage.setItem("lang", value); // сохраняем в сторадж
 
     for (let key in langArr) {
       // бежим по ключам в файле с переводом
-      // ---------------------------------------------------menu
-      // if (key === "menu") {
-      //   const menuHtml = document.querySelectorAll(".lang-menu");
-      //   for (let index = 0; index < menuHtml.length; index++) {
-      //     if (!langArr[key][value][index]) {
-      //       // защита от изменения html при старом файле перевода
-      //       return;
-      //     }
-      //     menuHtml[index].innerHTML = langArr[key][value][index];
-      //   }
-      // }
-      //////////////////////////////////////////all
 
       for (let className in langArr[key]) {
         const isValid = document.querySelector(`.lang-${key}-${className}`);
