@@ -1,0 +1,135 @@
+footer {
+  position: relative;
+}
+.order_processing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  -ms-transition: -ms-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  background: #f2e6f5;
+  border-radius: 40px;
+  overflow-y: hidden;
+
+  &__service-info {
+    display: grid;
+    position: relative;
+    grid-template-areas:
+      "image header"
+      "image ul";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 10% 90%;
+    @include adaptiv-value("margin", 40, 80);
+    @include adaptiv-value("gap", 40, 80);
+    &__image {
+      grid-area: image;
+      width: 302px;
+      height: 413px;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__header {
+      grid-area: header;
+      @include flex(space-between);
+      h1 {
+        font-weight: 600;
+        @include adaptiv-value("font-size", 24, 36);
+
+        text-transform: capitalize;
+      }
+      &__close {
+        cursor: pointer;
+
+        &::before {
+          content: "\00d7";
+          font-size: 32px;
+          font-weight: 300;
+        }
+        &:hover::before {
+          color: red;
+        }
+      }
+    }
+
+    ul {
+      grid-area: ul;
+      li {
+        font-weight: 300;
+        @include adaptiv-value("font-size", 14, 16);
+        @include adaptiv-value("padding-top", 12, 20);
+        @include adaptiv-value("padding-bottom", 0, 20);
+
+        @include flex(space-between);
+        border-bottom: 1px solid rgba(141, 129, 147, 0.3);
+        h2:first-child {
+          text-transform: capitalize;
+        }
+        h2:last-child {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  &__button {
+    text-align: center;
+    button {
+      @include button($colorMainDark, 100, 14, 24);
+    }
+  }
+}
+
+.show {
+  transform: translateY(0%);
+  top: 20px;
+}
+
+@include for-tablet-portrait-up {
+  .order_processing {
+    &__service-info {
+      grid-template-areas:
+        "header"
+        "image"
+        "ul";
+      grid-template-columns: 1fr;
+      grid-template-rows: 10% 20% 70%;
+      &__image {
+        width: 100%;
+        height: 84px;
+      }
+      &__header {
+        justify-content: center;
+
+        h1 {
+        }
+        &__close {
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: 0;
+          &::before {
+            content: "\00d7";
+            font-size: 32px;
+            font-weight: 300;
+          }
+          &:hover::before {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+}

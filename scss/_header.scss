@@ -1,10 +1,18 @@
+@mixin burgerLine($top) {
+  content: "";
+  position: absolute;
+  top: $top;
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: $colorMainDark;
+}
 .header {
   overflow: hidden;
   @include adaptiv-value("padding", 24, 51);
   &__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    @include flex(space-between, baseline, nowrap);
+
     .burger {
       display: none;
       &__line {
@@ -15,23 +23,10 @@
         background: $colorMainDark;
         transition: all 0.25s ease;
         &::before {
-          content: "";
-          position: absolute;
-          top: -7px;
-          display: block;
-          width: 30px;
-          height: 2px;
-          background: $colorMainDark;
-          transition: all 0.25s ease;
+          @include burgerLine(-7px);
         }
         &::after {
-          content: "";
-          position: absolute;
-          top: -14px;
-          display: block;
-          width: 30px;
-          height: 2px;
-          background: $colorMainDark;
+          @include burgerLine(-14px);
         }
       }
       &__menu {

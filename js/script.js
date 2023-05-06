@@ -1,8 +1,6 @@
 // import { generateCalendar } from "./calendar.js";
 import { langArr } from "./lang.js";
 document.addEventListener("DOMContentLoaded", async () => {
-  const body = document.querySelector("body");
-
   // const calendarWrapperElement = document.querySelector(".book__calendar");
   // const timeslotsWrapperElement = document.querySelector(".book__slots");
   // await generateCalendar(calendarWrapperElement, timeslotsWrapperElement);

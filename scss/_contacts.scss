@@ -19,7 +19,8 @@
     }
   }
   &__card {
-    @include flex(start, $gap: 20px);
+    @include flex(start);
+    @include adaptiv-value("gap", 8, 20);
     flex-direction: column;
 
     img {
@@ -51,7 +52,6 @@
       align-items: center;
     }
     &__card {
-      gap: 8px;
       margin-bottom: 16px;
     }
     &__map {

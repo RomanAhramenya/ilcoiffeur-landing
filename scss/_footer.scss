@@ -63,46 +63,7 @@
     }
     &__button {
       button {
-        font-weight: 300;
-        padding: 8px;
-        z-index: 1;
-        cursor: pointer;
-        color: $colorMainLighter;
-        transition: all 0.25s ease;
-        border: none;
-        outline: 2px black;
-        background: transparent;
-        position: relative;
-        left: 16px;
-        &::before {
-          content: "";
-          display: block;
-          position: absolute;
-          width: calc(100% + 32px);
-          height: 10px;
-          border-top: 1px solid $colorMainLighter;
-          border-left: 1px solid $colorMainLighter;
-          border-right: 1px solid $colorMainLighter;
-          left: -16px;
-          top: 0px;
-          border-radius: 60px 60px 0 0;
-        }
-        &::after {
-          content: "";
-          display: block;
-          position: absolute;
-          width: calc(100% + 32px);
-          height: 10px;
-          border-left: 1px solid $colorMainLighter;
-          border-right: 1px solid $colorMainLighter;
-          border-bottom: 1px solid $colorMainLighter;
-          left: -16px;
-          bottom: 0px;
-          border-radius: 0 0 60px 60px;
-        }
-        &:hover {
-          opacity: 0.5;
-        }
+        @include button($colorMainLighter, 32, 10, 10);
       }
     }
   }

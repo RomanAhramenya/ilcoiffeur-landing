@@ -1,3 +1,104 @@
+import { useState } from "./hooks.js";
+import servicesData from "./services-and-timings.js";
+
+const arrows = document.getElementsByClassName("arrow-container");
+
+const [department, setDepartment] = useState("");
+const [seviceType, setSeviceType] = useState("");
+//пробегаемся по всем кнопкам arrow
+for (let i = 0; i < arrows.length; i++) {
+  arrows[i].addEventListener("click", function () {
+    setDepartment(getDepartmentText(this));
+    setSeviceType(getServiceTypeText(this));
+    console.log(department());
+    console.log(seviceType());
+    let imageSrc = this.parentElement.querySelector("img").src;
+    updateOrderProcessingContentFirstScreen(
+      imageSrc,
+      servicesData[department()][seviceType()],
+      seviceType()
+    );
+  });
+}
+
+// forMen || forWomen || forChildren
+function getDepartmentText(element) {
+  //поднимаемся в верх по дереву
+  let item = element.parentElement;
+  let wrap = item.parentElement;
+  let list = wrap.parentElement;
+  let description = list.previousElementSibling;
+
+  // получаем из html текст forWomen forMen.... убираем лишние пробелы и все приводим в нижний шрифт
+  let departmentName = description
+    .querySelector("h1")
+    .textContent.toLowerCase()
+    .trim();
+
+  // у нас в массиве свойство описанно вот так forMen,а в тексте FOR MEN
+  // все приводим к одному варианту forMen
+  let departmentNameProp = departmentName.replace(/ (\w)/g, (match, letter) =>
+    letter.toUpperCase()
+  );
+  return departmentNameProp;
+}
+
+// Haircut || Hair dyed || Hair Straightened || .....
+function getServiceTypeText(element) {
+  let item = element.parentElement;
+  let serviceType = item.querySelector("h3").textContent.toLowerCase().trim();
+  return serviceType;
+}
+
+function updateOrderProcessingContentFirstScreen(newSrc, array, h1) {
+  const button = document.querySelector(".order_processing_button button");
+  const orderProcessingContainer = document.querySelector(".order_processing");
+  const closeBtn = orderProcessingContainer.querySelector(
+    ".order_processing__service-info__header__close"
+  );
+  // выводим такую же картинку как и карточке на которою нажали
+  changeImageSrc(orderProcessingContainer, newSrc);
+  // меняем заголовок
+  updateH1(orderProcessingContainer, h1);
+  // выводим список услуг
+  addServicesToHtml(orderProcessingContainer, array);
+  // показываем элемент
+  orderProcessingContainer.classList.add("show");
+  closeScreen(closeBtn, orderProcessingContainer, "show");
+}
+
+function updateH1(element, newText) {
+  let h1 = element.querySelector("h1");
+  h1.textContent = newText;
+}
+
+function addServicesToHtml(element, array) {
+  let ul = element.querySelector("ul");
+  ul.innerHTML = "";
+  array.map((item) => {
+    let li = document.createElement("li");
+    let serviceName = document.createElement("h2");
+    let price = document.createElement("h2");
+
+    serviceName.textContent = item.name;
+    price.textContent = `chf ${item.price}`;
+
+    li.appendChild(serviceName);
+    li.appendChild(price);
+    ul.appendChild(li);
+  });
+}
+function changeImageSrc(element, newSrc) {
+  console.log(element, newSrc);
+  let image = element.querySelector("img");
+  image.src = newSrc;
+}
+
+function closeScreen(buttonPress, closeElement, className) {
+  buttonPress.addEventListener("click", function () {
+    closeElement.classList.remove(className);
+  });
+}
 // const monthNames = [
 //   "January",
 //   "February",
