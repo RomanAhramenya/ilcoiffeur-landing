@@ -38,7 +38,7 @@ $fontMainSize: 24px;
   gap: $gap;
 }
 
-@mixin button($color, $width, $minFontSize, $maxFontSize) {
+@mixin button($color, $width, $minFontSize, $maxFontSize, $left: 0) {
   @include adaptiv-value("font-size", $minFontSize, $maxFontSize);
   font-weight: 300;
   padding: 8px;
@@ -50,7 +50,7 @@ $fontMainSize: 24px;
   outline: 2px black;
   background: transparent;
   position: relative;
-  left: 16px;
+  left: $left;
   text-transform: uppercase;
   &::before {
     content: "";

@@ -63,7 +63,7 @@
     }
     &__button {
       button {
-        @include button($colorMainLighter, 32, 10, 10);
+        @include button($colorMainLighter, 32, 10, 10, 16px);
       }
     }
   }

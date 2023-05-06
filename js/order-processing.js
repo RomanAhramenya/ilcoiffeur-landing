@@ -5,11 +5,23 @@ const arrows = document.getElementsByClassName("arrow-container");
 
 const [department, setDepartment] = useState("");
 const [seviceType, setSeviceType] = useState("");
+
+//запрещаем скролл при открытом модальном окне
+
+function toggleScrollBody(status) {
+  let body = document.body;
+  if (status) {
+    body.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "";
+  }
+}
 //пробегаемся по всем кнопкам arrow
 for (let i = 0; i < arrows.length; i++) {
   arrows[i].addEventListener("click", function () {
     setDepartment(getDepartmentText(this));
     setSeviceType(getServiceTypeText(this));
+    toggleScrollBody(true);
     console.log(department());
     console.log(seviceType());
     let imageSrc = this.parentElement.querySelector("img").src;
@@ -96,6 +108,7 @@ function changeImageSrc(element, newSrc) {
 
 function closeScreen(buttonPress, closeElement, className) {
   buttonPress.addEventListener("click", function () {
+    toggleScrollBody(false);
     closeElement.classList.remove(className);
   });
 }

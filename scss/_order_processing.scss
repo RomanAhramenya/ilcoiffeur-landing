@@ -6,7 +6,7 @@ footer {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 20px;
+  bottom: 0;
   transform: translateY(-100%);
   transition: transform 0.5s;
   -webkit-transition: -webkit-transform 0.5s;
@@ -14,12 +14,11 @@ footer {
   -ms-transition: -ms-transform 0.5s;
   -o-transition: -o-transform 0.5s;
   background: #f2e6f5;
-  border-radius: 40px;
   overflow-y: hidden;
 
   &__service-info {
     display: grid;
-    position: relative;
+
     grid-template-areas:
       "image header"
       "image ul";
@@ -71,7 +70,7 @@ footer {
         font-weight: 300;
         @include adaptiv-value("font-size", 14, 16);
         @include adaptiv-value("padding-top", 12, 20);
-        @include adaptiv-value("padding-bottom", 0, 20);
+        @include adaptiv-value("padding-bottom", 12, 20);
 
         @include flex(space-between);
         border-bottom: 1px solid rgba(141, 129, 147, 0.3);
@@ -85,7 +84,9 @@ footer {
     }
   }
   &__button {
-    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 50px);
     button {
       @include button($colorMainDark, 100, 14, 24);
     }
@@ -94,18 +95,20 @@ footer {
 
 .show {
   transform: translateY(0%);
-  top: 20px;
 }
 
 @include for-tablet-portrait-up {
   .order_processing {
+    border-radius: 0;
     &__service-info {
+      margin-left: 10px;
+      margin-right: 10px;
       grid-template-areas:
         "header"
         "image"
         "ul";
       grid-template-columns: 1fr;
-      grid-template-rows: 10% 20% 70%;
+      grid-template-rows: 10% 20% 65% 5%;
       &__image {
         width: 100%;
         height: 84px;
@@ -118,8 +121,8 @@ footer {
         &__close {
           cursor: pointer;
           position: absolute;
-          top: 0;
-          right: 0;
+          top: 10px;
+          right: 10px;
           &::before {
             content: "\00d7";
             font-size: 32px;
@@ -131,5 +134,9 @@ footer {
         }
       }
     }
+  }
+  .show {
+    top: 0;
+    bottom: 0;
   }
 }
